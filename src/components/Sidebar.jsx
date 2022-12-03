@@ -15,6 +15,10 @@ import {
     MdOutlineSportsVolleyball,
   } from "react-icons/md";
 
+import { TbMusic, TbDeviceGamepad2 } from "react-icons/tb";
+import { FaRegCompass } from "react-icons/fa";
+import { GiFilmStrip } from "react-icons/gi";
+
   
 export default function Sidebar() {
     const mainLinks = [
@@ -62,7 +66,7 @@ export default function Sidebar() {
       const subscriptionLinks = [
         {
           icon: <TbMusic className="text-xl" />,
-          name: "Music",
+          name: "Music",  
         },
         {
           icon: <MdOutlineSportsVolleyball className="text-xl" />,
@@ -117,16 +121,65 @@ export default function Sidebar() {
       ];
   return (
     <div className='w-2/12 bg-[#212121] pr-5 overflow-auto pb-8 sidebar'>
-       <ul className='flex flex-col border-2 bg-gray-700'> 
+       <ul className='flex flex-col border-2 border-gray-700'>  
        {mainLinks.map(({icon,name})=>{
         return(
             <li key={name} className={`pl-6 py-3 hover:bg-zinc-600${name === "Home" ? "bg-slate-600" : ""}`}>
-             <a className='flex items-center gap-5' href='#'>{icon}
+             <a  className='flex items-center gap-5' href='#'>{icon}
               <span className='text-sm tracking-wide'>{name}</span> 
-              </a></li> 
+              </a>
+              </li> 
         )
        })}
        </ul>
+       <ul className='flex flex-col border-2 border-gray-700'>   
+       {secondaryLinks.map(({icon,name})=>{
+        return(
+            <li key={name} className={`pl-6 py-3 hover:bg-zinc-600}`}>
+             <a  className='flex items-center gap-5' href='#'>{icon}
+              <span className='text-sm tracking-wide'>{name}</span> 
+              </a>
+              </li> 
+        )
+       })}
+       </ul>
+
+       <ul className='flex flex-col border-2 border-gray-700'>   
+       {subscriptionLinks.map(({icon,name})=>{
+        return(
+            <li key={name} className={`pl-6 py-3 hover:bg-zinc-600}`}>
+             <a  className='flex items-center gap-5' href='#'>{icon}
+              <span className='text-sm tracking-wide'>{name}</span> 
+              </a>
+              </li> 
+        )
+       })}
+       </ul>
+
+       <ul className='flex flex-col border-2 border-gray-700'>   
+       {helpLinks.map(({icon,name})=>{
+        return(
+            <li key={name} className={`pl-6 py-3 hover:bg-zinc-600}`}>
+             <a  className='flex items-center gap-5' href='#'>{icon}
+              <span className='text-sm tracking-wide'>{name}</span> 
+              </a>
+              </li> 
+        )
+       })}
+       </ul>
+       <ul className='flex gap-2 flex-wrap text-sm p-4 text-zinc-400'>
+        {textLinks[0].map((name)=>{
+            return <li key={name}>{name}</li>
+        })}
+       </ul>
+       <ul className='flex gap-2 flex-wrap text-sm p-4 text-zinc-400'>
+        {textLinks[1].map((name)=>{
+            return <li key={name}>{name}</li>
+        })}
+       </ul>
+       <span className='px-4 text-sm text-zinc-400 '>&copy; 2020 Google </span>
+       <br />
+      
     </div>
   )
 }
