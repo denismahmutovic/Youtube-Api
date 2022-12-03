@@ -179,7 +179,7 @@ export default function Sidebar() {
        </ul>
        <span className='px-4 text-sm text-zinc-400 '>&copy; 2020 Google </span>
        <br />
-      
+       <p className='px-4pt-3 text-zinc-400 text-sm'> </p>
     </div>
   )
 }
