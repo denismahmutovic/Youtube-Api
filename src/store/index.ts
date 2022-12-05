@@ -1,5 +1,5 @@
 
-import { configureStore,createSlice,PayloadAction} from "@reduxjs/toolkit";
+import { configureStore,createSlice,PayloadAction } from "@reduxjs/toolkit";
 import { InitialState } from "../Types";
 const initialState:InitialState ={
     videos:[],
@@ -7,7 +7,7 @@ const initialState:InitialState ={
     searchTerm: "",
     searchResults:[],
     nextPageToken:null,
-    recommendedVideos:[]
+    recommendedVideos:[]  
 } 
 
 const YoutubeSlice = createSlice({
