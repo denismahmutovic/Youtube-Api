@@ -5,7 +5,7 @@ import {
   timeSince,
 } from "./index";
 import { YOUTUBE_API_URL } from "./constants";
-import { HomePageVideos } from "../Types";
+import { HomePageVideos } from "../Types"; 
 
 const API_KEY = process.env.REACT_APP_YOTUBE_DATA_API_KEY;
 
@@ -17,8 +17,8 @@ export const parseData = async (items: any[]) => {
       (item: { snippet: { channelId: string }; id: { videoId: string } }) => {
         channelIds.push(item.snippet.channelId);
         videoIds.push(item.id.videoId);
-      }
-    );
+      } 
+    ); 
 
     const {
       data: { items: channelsData },
@@ -50,17 +50,17 @@ export const parseData = async (items: any[]) => {
     const parsedData: HomePageVideos[] = [];
     items.forEach(
       (
-        item: {
+        item: { 
           snippet: {
-            channelId: string;
+            channelId: string; 
             title: string;
             description: string;
             thumbnails: { medium: { url: string } };
-            publishedAt: Date;
+            publishedAt: Date;   
             channelTitle: string;
           };
           id: { videoId: string };
-        },
+        }, 
         index: number
       ) => {
         const { image: channelImage } = parsedChannelsData.find(
