@@ -4,7 +4,7 @@ import { HomePageVideos } from "../Types";
 
 export default function ({ data }: { data: HomePageVideos }) {
   return (
-    <div className="w-94 h-60 flex gap-3 flex-col">
+    <div className="w-64 h-60 flex gap-3 flex-col">
       <div className="relative">
         <span className=" absolute bottom-3 right-3 text-sm bg-gray-900 px-2 py-0.5 z-10">
           {data.videoDuration}
@@ -33,6 +33,19 @@ export default function ({ data }: { data: HomePageVideos }) {
               {data.videoTitle}
             </a>
           </h3>
+          <div className="text-sm text-gray-400">
+            <div>
+              <a href="#" className="hover:text-white">
+                {data.channelInfo.name}
+              </a>
+            </div>
+            <div>
+              <span className="after:content-['•'] after:mx-1">
+                {data.videoViews} views
+              </span>
+              <span>{data.videoAge}</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
