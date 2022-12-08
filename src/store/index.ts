@@ -14,21 +14,21 @@ const initialState:InitialState ={
     recommendedVideos:[]  
 } 
 
-// const YoutubeSlice = createSlice({
-//     name: "youtubeApp",
-//     initialState,
-//     reducers: {
-//       clearVideos: (state) => {
-//         state.videos = [];
-//         state.nextPageToken = null;
-//       },
-//       changeSearchTerm: (state, action: PayloadAction<string>) => {
-//         state.searchTerm = action.payload;
-//       },
-//       clearSearchTerm: (state) => {
-//         state.searchTerm = "";
-//       },
-//     },
+const YoutubeSlice = createSlice({
+    name: "youtubeApp",
+    initialState,
+    reducers: {
+      clearVideos: (state) => {
+        state.videos = [];
+        state.nextPageToken = null;
+      },
+      changeSearchTerm: (state, action: PayloadAction<string>) => {
+        state.searchTerm = action.payload;
+      },
+      clearSearchTerm: (state) => {
+        state.searchTerm = "";
+      },
+    },
         
     
     extraReducers:(builder)=>{
