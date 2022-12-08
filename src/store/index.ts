@@ -31,18 +31,18 @@ const initialState:InitialState ={
 //     },
         
     
-//     extraReducers:(builder)=>{
-//         builder.addCase(getHomePageVideos.fulfilled,(state,action)=>{
-//             state.videos = action.payload.parsedData;
-//             state.nextPageToken =action.payload.nextPageToken
-//         })
-//         builder.addCase(getSearchPageVideos.fulfilled,(state,action)=>{
-//             state.videos = action.payload.parsedData;
-//             state.nextPageToken =action.payload.nextPageToken
-//         })
-//     },
+    extraReducers:(builder)=>{
+        builder.addCase(getHomePageVideos.fulfilled,(state,action)=>{
+            state.videos = action.payload.parsedData;
+            state.nextPageToken =action.payload.nextPageToken
+        })
+        builder.addCase(getSearchPageVideos.fulfilled,(state,action)=>{
+            state.videos = action.payload.parsedData;
+            state.nextPageToken =action.payload.nextPageToken
+        })
+    },
        
-// })
+})
 
 export const store = configureStore({ 
     reducer:{
