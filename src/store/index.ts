@@ -3,7 +3,11 @@ import { configureStore,createSlice,PayloadAction } from "@reduxjs/toolkit";
 import { Action } from "@remix-run/router";
 import { InitialState } from "../Types";
 import { getHomePageVideos } from "./reducers/getHomePagaVideos";
+import { getVideoDetails } from "../store/reducers/getVideoDetalis";
 import { getSearchPageVideos } from "./reducers/getSearchPageVideos";
+import { getRecommendedVideos } from "./reducers/getRecommendedVideos";
+
+
 
 const initialState:InitialState ={
     videos:[],
@@ -40,7 +44,15 @@ const YoutubeSlice = createSlice({
             state.videos = action.payload.parsedData;
             state.nextPageToken =action.payload.nextPageToken
         })
+        builder.addCase(getVideoDetails.fulfilled,(state,action)=>{
+            state.currentPlaying = action.payload;
+            
+        })
+        builder.addCase(getRecommendedVideos.fulfilled, (state, action) => {
+            state.recommendedVideos = action.payload.parsedData;
+          });
     },
+    
        
 })
 
@@ -51,5 +63,6 @@ export const store = configureStore({
 })
 export const { clearVideos, changeSearchTerm, clearSearchTerm } =
   YoutubeSlice.actions;
+
 export type RootState = ReturnType<typeof store.getState>;
 export type AppDispatch = typeof store.dispatch;
