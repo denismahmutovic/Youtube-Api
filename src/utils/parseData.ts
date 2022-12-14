@@ -93,4 +93,5 @@ export const parseData = async (items: any[]) => {
   } catch (err) {
     console.log(err);
   }
+  
 };
